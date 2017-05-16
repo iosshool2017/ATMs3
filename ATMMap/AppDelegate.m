@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "ATMMapViewController.h"
+#import "ATMTableViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,6 +18,12 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    UITabBarController *tabbar = [[UITabBarController alloc] init];
+    UIViewController *vc1=[ATMMapViewController new];
+    UIViewController *vc2=[ATMTableViewController new];
+    tabbar.viewControllers=@[vc1, vc2];
+    self.window.rootViewController = tabbar;
+    
     // Override point for customization after application launch.
     return YES;
 }
